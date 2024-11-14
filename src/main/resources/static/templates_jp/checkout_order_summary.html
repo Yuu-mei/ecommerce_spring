@@ -1,0 +1,114 @@
+<div class="container min-vh-100">
+    <div class="row justify-content-center">
+        <div class="col-lg-8">
+            <div class="card bg-secondary p-4 text-white">
+                <h4 class="text-center mb-4">注文の概要</h4>
+                
+                <!-- Products Information Section -->
+				<h5 class="mb-3">製品情報:</h5>
+				<div class="row mb-3">
+				    {{#videogames}}
+					    <div class="col-md-12 mb-3">
+					      <div class="d-flex align-items-center border p-2 rounded bg-light text-black">
+					        <!-- Image -->
+					        <div class="me-3">
+					          <img src="../get_image?id={{videogame_id}}&type=header" style="height: 60px; width: 90px" class="rounded">
+					        </div>
+					        
+					        <!-- Title -->
+					        <div class="flex-grow-1">
+					          <b>{{title}}</b>
+					        </div>
+					        
+					        <!-- Quantity and Price -->
+					        <div class="text-end">
+					          <p class="mb-0">量: {{quantity}}</p>
+					          <p class="mb-0">値段: ${{price}}</p>
+					        </div>
+					      </div>
+					    </div>
+				    {{/videogames}}
+				</div>
+				
+                <!-- Customer Information Section -->
+                <h5 class="mb-3">個人情報:</h5>
+                <div class="row mb-3">
+                    <div class="col-md-6">
+                        <p class="mb-1"><strong>名前:</strong></p>
+                        <p id="fullName">{{fullName}}</p>
+                    </div>
+                    <div class="col-md-6">
+                        <p class="mb-1"><strong>電話番号:</strong></p>
+                        <p id="phone">{{phone}}</p>
+                    </div>
+                </div>
+                <div class="row mb-3">
+                    <div class="col-md-6">
+                        <p class="mb-1"><strong>国:</strong></p>
+                        <p id="country">{{country}}</p>
+                    </div>
+                    <div class="col-md-6">
+                        <p class="mb-1"><strong>州:</strong></p>
+                        <p id="state">{{state}}</p>
+                    </div>
+                </div>
+                <div class="row mb-3">
+                    <div class="col-md-6">
+                        <p class="mb-1"><strong>郵便番号:</strong></p>
+                        <p id="zip_code">{{zip_code}}</p>
+                    </div>
+                    <div class="col-md-6">
+                        <p class="mb-1"><strong>住所:</strong></p>
+                        <p id="address">{{address}}</p>
+                    </div>
+                </div>
+
+                <!-- Card Information Section -->
+                <h5 class="mt-4 mb-3">クレジットカード情報:</h5>
+                <div class="row mb-3">
+                    <div class="col-md-6">
+                        <p class="mb-1"><strong>カード番号:</strong></p>
+                        <p id="cardNumber">**** **** **** {{cardNumber}}</p>
+                    </div>
+                    <div class="col-md-6">
+                        <p class="mb-1"><strong>カード所有者:</strong></p>
+                        <p id="cardOwner">{{cardOwner}}</p>
+                    </div>
+                </div>
+                <div class="row mb-3">
+                    <div class="col-md-4">
+                        <p class="mb-1"><strong>カード系:</strong></p>
+                        <p id="cardType">{{cardType}}</p>
+                    </div>
+                    <div class="col-md-4">
+                        <p class="mb-1"><strong>カードの有効期限:</strong></p>
+                        <p id="cardExpireDate">{{cardExpireDate}}</p>
+                    </div>
+                    <div class="col-md-4">
+                        <p class="mb-1"><strong>CCV:</strong></p>
+                        <p id="ccv">{{ccv}}</p>
+                    </div>
+                </div>
+
+                <!-- Shipping Information Section -->
+                <h5 class="mt-4 mb-3">配送情報:</h5>
+                <div class="row mb-3">
+                    <div class="col-md-6">
+                        <p class="mb-1"><strong>配送詳細:</strong></p>
+                        <p id="shippingDetails">{{shippingDetails}}</p>
+                    </div>
+                    <div class="col-md-6">
+                        <p class="mb-1"><strong>配送系:</strong></p>
+                        <p id="shippingType">{{shippingType}}</p>
+                    </div>
+                </div>
+
+                <!-- Total Summary -->
+                <div class="text-end mt-4">
+                    <h5><strong>注文合計:</strong> $<span id="total-price"></span></h5>
+                    <button type="button" class="btn btn-success mt-3" id="checkout-btn">注文を確認</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

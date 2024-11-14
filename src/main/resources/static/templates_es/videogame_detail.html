@@ -1,0 +1,82 @@
+<div class="container">
+    <!-- Videogame Details -->
+    <div class="row my-3 p-4 game-details rounded">
+        <div class="col-lg-6 d-flex align-items-center">
+            <div id="gameDetailCarousel" class="carousel slide">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                    <img src="../get_image?id={{videogame.videogame_id}}&type=gameplay1" class="d-block w-100" alt="...">
+                    </div>
+                    <div class="carousel-item">
+                    <img src="../get_image?id={{videogame.videogame_id}}&type=gameplay2" class="d-block w-100" alt="...">
+                    </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#gameDetailCarousel" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Anterior</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#gameDetailCarousel" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Siguiente</span>
+                </button>
+            </div>
+        </div>
+        <div class="col-lg-6">
+            <div class="row">
+                <div class="col">
+                    <h2 class="mt-2">{{videogame.title}} <i class="bi bi-heart clickable-icon" id="wishlist" videogame-id="{{videogame.videogame_id}}"></i></h2> 
+                </div>
+            </div>
+            <div class="row my-2">
+            	<div class="col">
+                    <h4 class="mt-2">{{videogame.release_date}}</h4> 
+                </div>
+            </div>
+            <div class="row my-2">
+                <div class="col-6">
+                    <h6 class="card-subtitle mb-2 text-body-secondary">Desarrolladores:<br> 
+                        {{#videogame.developers}}
+                            <a href="#" class="text-primary get-dev-videogames" dev-id="{{dev_id}}">{{dev_name}}</a><br>
+                        {{/videogame.developers}}
+                    </h6>
+                </div>
+                <div class="col-6">
+                    <h6 class="card-subtitle mb-2 text-body-secondary">Tags: <br>
+                        <a href="#" class="text-warning get-tag-videogames" tag-id="{{videogame.tag_id}}">{{videogame.tag_name}}</a>
+                    </h6>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col mb-2 fw-medium">
+                    {{videogame.description}}
+                </div>
+            </div>
+            <div class="row">
+                <div class="col mb-2 fs-1">
+                    <div class="d-flex justify-content-center">
+                        <p class="align-self-end">Precio: <strong class="text-warning">${{videogame.price}}</strong></p>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col d-flex justify-content-center mb-2">
+                    <a class="btn btn-lg btn-success" id="add_game_to_cart" videogame-id="{{videogame.videogame_id}}">AÑADIR AL CARRITO</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Similar Videogames -->
+    <div class="row">
+        <h3>Juegos Similares</h3>
+        <hr>
+        {{#similar_games}}
+        <div class="col-sm-6 col-md-4 col-lg-3 d-flex justify-content-center mb-3">
+            <div class="card hero-card">
+                <img src="../get_image?id={{videogame_id}}&type=capsule" class="card-img">
+                <div class="overlay">{{title}}</div>
+                <a href="#" class="stretched-link get-videogame-details" videogame-id="{{videogame_id}}"></a>
+            </div>
+        </div>
+        {{/similar_games}}
+    </div> 
+</div>

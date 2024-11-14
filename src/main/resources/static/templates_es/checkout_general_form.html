@@ -1,0 +1,80 @@
+<div class="d-flex align-items-center justify-content-center">
+	<div class="row w-100">
+        <div class="col-md-8 mx-auto">
+            <div class="bg-secondary text-white p-4 rounded shadow">
+                <h2 class="text-center mb-4">Formulario de Pedidos - Informacion Personal</h2>
+                    <div class="row mb-3">
+                        <div class="col-md-6">
+                            <label for="fullName" class="form-label">Nombre Completo</label>
+                            <input type="text" class="form-control" id="fullName" placeholder="Enter your full name" required>
+                        </div>
+                        <div class="col-md-6">
+                            <label for="address" class="form-label">Direccion</label>
+                            <input type="text" class="form-control" id="address" placeholder="Enter your address" required>
+                        </div>
+                    </div>
+                    
+                    <div class="row mb-3">
+                        <div class="col-md-6">
+                            <label for="country" class="form-label">País</label>
+                            <select class="form-select" id="country" required>
+                                <option selected value="0" disabled>Escoge...</option>
+        
+                                <optgroup label="Americas">
+                                    <option value="USA">Estados Unidos</option>
+                                    <option value="Canada">Canada</option>
+                                    <option value="Mexico">Mexico</option>
+                                    <option value="Brazil">Brasil</option>
+                                    <option value="Argentina">Argentina</option>
+                                    <option value="Colombia">Colombia</option>
+                                    <option value="Chile">Chile</option>
+                                    <option value="Peru">Peru</option>
+                                </optgroup>
+                        
+                                <optgroup label="Europe">
+                                    <option value="UK">Reino Unido</option>
+                                    <option value="Germany">Alemania</option>
+                                    <option value="France">Francia</option>
+                                    <option value="Italy">Italia</option>
+                                    <option value="Spain">España</option>
+                                    <option value="Netherlands">Paises Bajos</option>
+                                    <option value="Sweden">Suecia</option>
+                                    <option value="Switzerland">Suiza</option>
+                                    <option value="Norway">Noruega</option>
+                                </optgroup>
+                        
+                                <optgroup label="Oceania">
+                                    <option value="Australia">Australia</option>
+                                    <option value="New Zealand">Nueva Zelanda</option>
+                                </optgroup>
+                        
+                                <optgroup label="Asia">
+                                    <option value="Japan">Japón</option>
+                                    <option value="Korea">Corea</option>
+                                </optgroup>
+                            </select>
+                        </div>
+                        <div class="col-md-6">
+                            <label for="state" class="form-label">Estado</label>
+                            <input type="text" class="form-control" id="state" placeholder="Enter your state" required>
+                        </div>
+                    </div>
+
+                    <div class="row mb-3">
+                        <div class="col-md-6">
+                            <label for="zip_code" class="form-label">Codigo Postal</label>
+                            <input type="text" class="form-control" id="zip_code" placeholder="Enter your zip code" required>
+                        </div>
+                        <div class="col-md-6">
+                            <label for="phone" class="form-label">Teléfono</label>
+                            <input type="text" class="form-control" id="phone" placeholder="Enter your phone number" required>
+                        </div>
+                    </div>
+
+                    <div class="text-center">
+                        <a href="#" class="btn btn-light mt-3" id="confirm_general_data">Confirmar</a>
+                    </div>
+            </div>
+        </div>
+    </div>
+</div>

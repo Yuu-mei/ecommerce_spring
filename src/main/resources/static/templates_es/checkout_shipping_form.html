@@ -1,0 +1,30 @@
+<div class="d-flex align-items-center justify-content-center">
+	<div class="row w-100">
+        <div class="col-md-8 mx-auto">
+            <div class="bg-secondary text-white p-4 rounded shadow">
+                <h2 class="text-center mb-4">Formulario de Pedido - Información de Envío</h2>
+                    <div class="row mb-3">
+                        <div class="col-md-12">
+                            <label for="shippingDetails" class="form-label">Detalles de Envío</label>
+                            <textarea class="form-control" id="shippingDetails" rows="3" placeholder="Anything we should inform the shipping company about?"></textarea>
+                        </div>
+                    </div>
+                    
+                    <div class="row mb-3">
+                        <div class="col-md-12">
+                            <label for="shippingType" class="form-label">Tipo de Envío</label>
+                            <select class="form-select" id="shippingType" required>
+                                <option selected value="0" disabled>Escoge...</option>
+                                <option value="standard">Estándar</option>
+                                <option value="express">Express (+15$)</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="text-center">
+                        <a href="#" class="btn btn-light mt-3" id="confirm-shipping-data">Comprar</a>
+                    </div>
+            </div>
+        </div>
+    </div>
+</div>

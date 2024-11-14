@@ -1,0 +1,21 @@
+<div class="row mb-3">
+	<div class="d-flex justify-content-between align-items-center">
+		<h3>{{tag_name}}付きゲーム</h3>
+		<div class="ms-auto">
+            <a href="#" id="previous-page-tag" class="btn btn-warning btn-sm me-2">&lt;</a>
+            <a href="#" id="next-page-tag" class="btn btn-warning btn-sm">&gt;</a>
+        </div>
+        <hr>
+	</div>
+</div>
+<div class="row">
+    {{#videogames}}
+        <div class="col-sm-6 col-md-4 col-lg-3 d-flex justify-content-center mb-3">
+            <div class="card hero-card">
+                <img src="../get_image?id={{videogame_id}}&type=capsule" class="card-img">
+                <div class="overlay">{{title}}</div>
+                <a href="#" class="stretched-link get-videogame-details" videogame-id="{{videogame_id}}"></a>
+            </div>
+        </div>
+    {{/videogames}}
+</div> 

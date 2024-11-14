@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html xmlns="http://www.thymeleaf.or" data-bs-theme="dark">
+<head>
+<meta charset="UTF-8">
+<title>Admin Panel - Order Details</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+<link href="/css/admin_styles.css" rel="stylesheet">
+</head>
+<body>
+		<span th:insert="fragments/general.html :: menu"></span>
+			<main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+				<div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+				<h1 class="h2">Admin Dashboard - Order Details</h1>
+				</div>
+				
+				
+				<div class="container min-vh-100">
+				    <div class="row justify-content-center">
+				        <div class="col-lg-8">
+				            <div class="card bg-secondary p-4 text-white">
+				                <h4 class="text-center mb-4">Order Summary</h4>
+				                
+				                <!-- Products Information Section -->
+								<h5 class="mb-3">Products Information:</h5>
+								<div class="row mb-3">
+									    <div class="col-md-12 mb-3" th:each="orderProduct: ${order.orderProducts}">
+									      <div class="d-flex align-items-center border p-2 rounded bg-light text-black">
+									        <!-- Image -->
+									        <div class="me-3">
+									          <img th:src="@{${'../get_image?id='+orderProduct.videogame.videogame_id+'&type=header'}}" style="height: 60px; width: 90px" class="rounded">
+									        </div>
+									        
+									        <!-- Title -->
+									        <div class="flex-grow-1">
+									          <b th:text="${orderProduct.videogame.title}"></b>
+									        </div>
+									        
+									        <!-- Quantity and Price -->
+									        <div class="text-end">
+									          <p class="mb-0">Quantity: <span th:text="${orderProduct.quantity}"></span></p>
+									          <p class="mb-0">Price: <span th:text="${orderProduct.videogame.price}"></span></p>
+									        </div>
+									      </div>
+									    </div>
+								</div>
+								
+				                <!-- Customer Information Section -->
+				                <h5 class="mb-3">Customer Information:</h5>
+				                <div class="row mb-3">
+				                    <div class="col-md-6">
+				                        <p class="mb-1"><strong>Full Name:</strong></p>
+				                        <p id="fullName" th:text="${order.fullName}"></p>
+				                    </div>
+				                    <div class="col-md-6">
+				                        <p class="mb-1"><strong>Phone:</strong></p>
+				                        <p id="phone" th:text="${order.phone}"></p>
+				                    </div>
+				                </div>
+				                <div class="row mb-3">
+				                    <div class="col-md-6">
+				                        <p class="mb-1"><strong>Country:</strong></p>
+				                        <p id="country" th:text="${order.country}"></p>
+				                    </div>
+				                    <div class="col-md-6">
+				                        <p class="mb-1"><strong>State:</strong></p>
+				                        <p id="state" th:text="${order.state}"></p>
+				                    </div>
+				                </div>
+				                <div class="row mb-3">
+				                    <div class="col-md-6">
+				                        <p class="mb-1"><strong>Zip Code:</strong></p>
+				                        <p id="zip_code" th:text="${order.zip_code}"></p>
+				                    </div>
+				                    <div class="col-md-6">
+				                        <p class="mb-1"><strong>Address:</strong></p>
+				                        <p id="address" th:text="${order.address}"></p>
+				                    </div>
+				                </div>
+				
+				                <!-- Card Information Section -->
+				                <h5 class="mt-4 mb-3">Card Information:</h5>
+				                <div class="row mb-3">
+				                    <div class="col-md-6">
+				                        <p class="mb-1"><strong>Card Number:</strong></p>
+				                        <p id="cardNumber" th:text="${order.cardNumber}"></p>
+				                    </div>
+				                    <div class="col-md-6">
+				                        <p class="mb-1"><strong>Card Owner:</strong></p>
+				                        <p id="cardOwner" th:text="${order.cardOwner}"></p>
+				                    </div>
+				                </div>
+				                <div class="row mb-3">
+				                    <div class="col-md-4">
+				                        <p class="mb-1"><strong>Card Type:</strong></p>
+				                        <p id="cardType" th:text="${order.cardType}"></p>
+				                    </div>
+				                    <div class="col-md-4">
+				                        <p class="mb-1"><strong>Expire Date:</strong></p>
+				                        <p id="cardExpireDate" th:text="${order.cardExpireDate}"></p>
+				                    </div>
+				                    <div class="col-md-4">
+				                        <p class="mb-1"><strong>CCV:</strong></p>
+				                        <p id="ccv" th:text="${order.ccv}"></p>
+				                    </div>
+				                </div>
+				
+				                <!-- Shipping Information Section -->
+				                <h5 class="mt-4 mb-3">Shipping Information:</h5>
+				                <div class="row mb-3">
+				                    <div class="col-md-6">
+				                        <p class="mb-1"><strong>Shipping Details:</strong></p>
+				                        <p id="shippingDetails" th:text="${order.shippingDetails}"></p>
+				                    </div>
+				                    <div class="col-md-6">
+				                        <p class="mb-1"><strong>Shipping Type:</strong></p>
+				                        <p id="shippingType" th:text="${order.shippingType}"></p>
+				                    </div>
+				                </div>
+				
+				                <!-- Status -->
+				                <div class="text-end mt-4">
+				                	<input id="order-id" type="hidden" disabled th:field="${order.order_id}">
+				                	<select th:field="${order.status}" class="form-select" id="order-status">
+				                		<option th:each="status: ${orderStatus}" th:value="${status}" th:text="${status.key}"></option>
+				                	</select>
+				                </div>
+				            </div>
+				        </div>
+				    </div>
+				</div>				
+			</main>
+		</div>
+		</div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+<script src="../jslibs/jquery.js"></script>
+<script>
+	$("#order-status").on("change", () => {
+		console.log($("#order-status").find(":selected").text());
+		$.post("change-order-status", {
+			id: $("#order-id").val(),
+			status: $("#order-status").find(":selected").text().trim()
+		});
+	});
+</script>
+</body>
+</html>

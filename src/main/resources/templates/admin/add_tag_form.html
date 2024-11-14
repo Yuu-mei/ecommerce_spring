@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html xmlns="http://www.thymeleaf.org" data-bs-theme="dark">
+<head>
+<meta charset="UTF-8">
+<title>Admin Panel - Add Tag</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+<link href="/css/admin_styles.css" rel="stylesheet">
+</head>
+<body>
+		<span th:insert="fragments/general.html :: menu"></span>
+			<main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+				<div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+				<h1 class="h2">Admin Dashboard - Add Tag</h1>
+				</div>
+		
+				<div class="row">
+					<div class="d-flex justify-content-center align-items-center">
+						<form th:object="${t}" action="tag-add" method="post">
+							<!-- Name -->
+							<div class="mb-3">
+								<label for="name" class="form-label">Name</label>
+								<input type="text" class="form-control" name="name" th:field="*{name}" required />
+								<p class="invalid_form" th:if="${#fields.hasErrors('name')}" th:errors="*{name}"></p>
+							</div>
+					
+							<!-- Description -->
+							<div class="mb-3">
+								<label for="escription" class="form-label">Description</label>
+								<textarea class="form-control" name="description" th:field="*{description}" required></textarea>
+								<p class="invalid_form" th:if="${#fields.hasErrors('description')}" th:errors="*{description}"></p>
+							</div>
+					
+							<input type="submit" class="btn btn-primary" value="Submit">
+						</form>
+					</div>
+				</div>
+			</main>
+		</div>
+		</div>	
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+</body>
+</html>

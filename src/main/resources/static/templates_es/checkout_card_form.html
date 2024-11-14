@@ -1,0 +1,46 @@
+<div class="d-flex align-items-center justify-content-center">
+	<div class="row w-100">
+        <div class="col-md-8 mx-auto">
+            <div class="bg-secondary text-white p-4 rounded shadow">
+                <h2 class="text-center mb-4">Formulario de Pedido - Información de Tarjeta (usa datos faltos)</h2>
+                    <div class="row mb-3">
+                        <div class="col-md-12">
+                            <label for="cardType" class="form-label">Tipo de Tarjeta</label>
+                            <select class="form-select" id="cardType" required>
+                                <option selected value="0" disabled>Escoge...</option>
+                                <option value="visa">VISA</option>
+                                <option value="mastercard">Master Card</option>
+                                <option value="americanexpress">American Express</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <div class="row mb-3">
+                        <div class="col-md-6">
+                            <label for="cardOwner" class="form-label">Titular de Tarjeta</label>
+                            <input type="text" class="form-control" id="cardOwner" placeholder="Enter the card owner's name" required>
+                        </div>
+                        <div class="col-md-6">
+                            <label for="cardNumber" class="form-label">Nº de Tarjeta</label>
+                            <input type="text" class="form-control" id="cardNumber" placeholder="Enter your card number" required>
+                        </div>
+                    </div>
+
+                    <div class="row mb-3">
+                        <div class="col-md-6">
+                            <label for="ccv" class="form-label">CCV (3 digitos atrás)</label>
+                            <input type="text" class="form-control" id="ccv" placeholder="Enter your security code" required>
+                        </div>
+                        <div class="col-md-6">
+                            <label for="cardExpireDate" class="form-label">Fecha de Caducidad</label>
+                            <input type="date" class="form-control" id="cardExpireDate" required>
+                        </div>
+                    </div>
+
+                    <div class="text-center">
+                        <a href="#" class="btn btn-light mt-3" id="confirm_card_data">Confirmar</a>
+                    </div>
+            </div>
+        </div>
+    </div>
+</div>

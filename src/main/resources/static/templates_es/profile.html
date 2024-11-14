@@ -1,0 +1,56 @@
+<div class="container">
+  <!-- Profile -->
+  <div class="row align-items-center my-5 mx-2">
+    <div class="col-md-4 text-center">
+      <img src="../get_user_image?user_id={{user_id}}" alt="User Image" class="pfp" />
+    </div>
+    <div class="col-md-8">
+      <h3>{{username}}</h3>
+      <ul class="list-unstyled">
+        <li><strong>{{country}}</strong></li>
+        <li><strong>{{email}}</strong></li>
+        <li><strong>{{phone}}</strong></li>
+      </ul>
+    </div>
+  </div>
+  <!-- Bought Games List -->
+  <div class="row my-2">
+    <h3>Tu Libreria</h3>
+    <hr />
+    {{#bought_games}}
+    <div class="col-sm-6 col-md-4 col-lg-3 d-flex justify-content-center mb-3">
+      <div class="card hero-card">
+        <img
+          src="../get_image?id={{videogame_id}}&type=capsule"
+          class="card-img"
+        />
+        <div class="overlay">
+          <div>
+            <div class="game-title">{{videogame_title}}</div>
+            <div class="quantity">Cantidad: {{quantity}}</div>
+            <div class="order-number">Nº Pedido: {{order_id}}</div>
+          </div>
+        </div>
+        <a href="#" class="stretched-link get-videogame-details" videogame-id="{{videogame_id}}"></a>
+      </div>
+    </div>
+    {{/bought_games}}
+  </div>
+  <!-- Wishlisted Games -->
+  <div class="row my-2">
+    <h3>Juegos Deseados</h3>
+    <hr />
+    {{#wishlist}}
+    <div class="col-sm-6 col-md-4 col-lg-3 d-flex justify-content-center mb-3">
+      <div class="card hero-card">
+        <img
+          src="../get_image?id={{videogame_id}}&type=capsule"
+          class="card-img"
+        />
+        <div class="overlay">{{videogame_title}}</div>
+        <a href="#" class="stretched-link get-videogame-details" videogame-id="{{videogame_id}}"></a>
+      </div>
+    </div>
+    {{/wishlist}}
+  </div>
+</div>

@@ -1,0 +1,71 @@
+<!-- Featured Videogames -->
+<div class="row">
+    <h3>Featured Games</h3>
+    <hr />
+    <div class="col">
+        <div id="carouselExample" class="carousel slide">
+            <div class="carousel-inner">
+            	{{#latest_videogames}}
+                <div class="carousel-item {{#first_element}}active{{/first_element}}">
+                    <div class="card mb-3">
+                        <div class="row g-0">
+                            <div class="col-md-6">
+                                <img src="../get_image?id={{videogame_id}}&type=header" class="img-fluid rounded-start img-full-height" alt="...">
+                            </div>
+                            <div class="col-md-6">
+                                <div class="card-body">
+                                    <h5 class="card-title">{{title}}</h5>
+                                    <h6 class="card-subtitle mb-2 text-body-secondary">Developers:
+                                    	{{#developers}}
+                                     	<a href="#" class="btn btn-sm btn-outline-primary rounded text-fluid get-dev-videogames" dev-id="{{dev_id}}">{{dev_name}}</a>
+                                     	{{/developers}}
+                                    </h6>
+                                    <p class="card-text px-3">{{description}}</p>
+                                    <div class="d-flex justify-content-between mt-auto">
+                                        <p class="card-text">
+                                            <small class="text-body-secondary">${{price}}</small>
+                                        </p>
+                                        <p class="card-text">
+                                            <a href="#" class="btn btn-sm btn-outline-warning get-videogame-details" videogame-id="{{videogame_id}}">Details</a>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {{/latest_videogames}}
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+    </div>
+</div>
+<!-- Videogame List -->
+<div class="row mb-3">
+	<div class="d-flex justify-content-between align-items-center">
+		<h3>Available Games</h3>
+		<div class="ms-auto">
+            <a href="#" id="previous-page" class="btn btn-warning btn-sm me-2">&lt;</a>
+            <a href="#" id="next-page" class="btn btn-warning btn-sm">&gt;</a>
+        </div>
+        <hr>
+	</div>
+</div>
+<div class="row">
+    {{#videogames}}
+        <div class="col-sm-6 col-md-4 col-lg-3 d-flex justify-content-center mb-3">
+            <div class="card hero-card">
+                <img src="../get_image?id={{0}}&type=capsule" class="card-img">
+                <div class="overlay">{{1}}</div>
+                <a href="#" class="stretched-link get-videogame-details" videogame-id="{{0}}"></a>
+            </div>
+        </div>
+    {{/videogames}}
+</div> 

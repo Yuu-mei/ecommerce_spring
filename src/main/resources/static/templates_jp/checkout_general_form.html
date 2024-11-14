@@ -1,0 +1,80 @@
+<div class="d-flex align-items-center justify-content-center">
+	<div class="row w-100">
+        <div class="col-md-8 mx-auto">
+            <div class="bg-secondary text-white p-4 rounded shadow">
+                <h2 class="text-center mb-4">注文のフォーミュラリー - 個人情報</h2>
+                    <div class="row mb-3">
+                        <div class="col-md-6">
+                            <label for="fullName" class="form-label">名前</label>
+                            <input type="text" class="form-control" id="fullName" placeholder="Enter your full name" required>
+                        </div>
+                        <div class="col-md-6">
+                            <label for="address" class="form-label">住所</label>
+                            <input type="text" class="form-control" id="address" placeholder="Enter your address" required>
+                        </div>
+                    </div>
+                    
+                    <div class="row mb-3">
+                        <div class="col-md-6">
+                            <label for="country" class="form-label">国</label>
+                            <select class="form-select" id="country" required>
+                                <option selected value="0" disabled>選んで...</option>
+        
+                                <optgroup label="Americas">
+                                    <option value="USA">アメリカ</option>
+                                    <option value="Canada">カナダ</option>
+                                    <option value="Mexico">メキシコ</option>
+                                    <option value="Brazil">ブラジル</option>
+                                    <option value="Argentina">アルゼンチン</option>
+                                    <option value="Colombia">コロンビア</option>
+                                    <option value="Chile">チリ</option>
+                                    <option value="Peru">ペルー</option>
+                                </optgroup>
+                        
+                                <optgroup label="Europe">
+                                    <option value="UK">イギリス</option>
+                                    <option value="Germany">ドイツ</option>
+                                    <option value="France">フランス</option>
+                                    <option value="Italy">イタリア</option>
+                                    <option value="Spain">スペイン</option>
+                                    <option value="Netherlands">オランダ</option>
+                                    <option value="Sweden">スウェーデン</option>
+                                    <option value="Switzerland">スイス</option>
+                                    <option value="Norway">ノルウェー</option>
+                                </optgroup>
+                        
+                                <optgroup label="Oceania">
+                                    <option value="Australia">オーストラリア</option>
+                                    <option value="New Zealand">ニュージーランド</option>
+                                </optgroup>
+                        
+                                <optgroup label="Asia">
+                                    <option value="Japan">日本</option>
+                                    <option value="Korea">韓国</option>
+                                </optgroup>
+                            </select>
+                        </div>
+                        <div class="col-md-6">
+                            <label for="state" class="form-label">州</label>
+                            <input type="text" class="form-control" id="state" placeholder="Enter your state" required>
+                        </div>
+                    </div>
+
+                    <div class="row mb-3">
+                        <div class="col-md-6">
+                            <label for="zip_code" class="form-label">郵便番号</label>
+                            <input type="text" class="form-control" id="zip_code" placeholder="Enter your zip code" required>
+                        </div>
+                        <div class="col-md-6">
+                            <label for="phone" class="form-label">電話番号</label>
+                            <input type="text" class="form-control" id="phone" placeholder="Enter your phone number" required>
+                        </div>
+                    </div>
+
+                    <div class="text-center">
+                        <a href="#" class="btn btn-light mt-3" id="confirm_general_data">確認</a>
+                    </div>
+            </div>
+        </div>
+    </div>
+</div>
